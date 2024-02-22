@@ -10,6 +10,6 @@ export const AboutData: AboutType = {
   firstName: "Bum-su",
   lastName: "Kim",
   englishName: "Glenn",
-  about1: "<A Developer who loves to build cool things />",
-  about2: "<Frontend Developer And Web Designer />",
+  about1: "<A person who lives steadily without being greedy />",
+  about2: "<Frontend Developer to becoming full-stack />",
 };
