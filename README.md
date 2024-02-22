@@ -1,24 +1,13 @@
-# Animated Portfolio 
-
-##### [Live Demo](https://animated-portfolio.erfjs.com) on Netlify
-
-## 📷 Screenshot
-<p align="center">
-  <a src="https://animated-portfolio.erfjs.com" target="_blank"><img src="./src/assets/example.png" width="800" height="auto" /></a>
-</p>
-
-<p align="center">Lighthouse Speed</p>
-<p align="center">
-  <a src="https://animated-portfolio.erfjs.com" target="_blank"><img src="./src/assets/performance.png" width="800" height="auto" /></a>
-</p>
-
+# Portfolio
 
 ## 📋 Project description
-React Animated Portfolio Website 
 
----------
-  
+Bumsu's Portfolio
+
+---
+
 ## 💻 Technologies used
+
 - React v18.2
 - Typescript
 - React-Router-Dom v6
@@ -26,3 +15,11 @@ React Animated Portfolio Website
 - HTML5
 - CSS3/SASS
 
+## Test
+
+```bash
+yarn install
+
+yarn start
+
+```
