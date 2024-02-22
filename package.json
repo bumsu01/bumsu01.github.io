@@ -1,7 +1,16 @@
 {
-  "name": "animated-portfolio",
-  "version": "0.1.0",
-  "private": true,
+  "name": "bumsu01.github.io",
+  "version": "0.0.1",
+  "description": "bumsu(glenn)'s Portfolio",
+  "main": "src/index.tsx",
+  "sideEffect": false,
+  "exports": {
+    ".": {
+      "require": "./src/index.tsx",
+      "import": "./src/index.tsx"
+    },
+    "./package.json": "./package.json"
+  },
   "dependencies": {
     "@types/node": "^18.11.9",
     "@types/react": "^18.0.25",
@@ -20,8 +29,8 @@
     "typescript": "^4.8.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "yarn start",
+    "build": "yarn build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "yarn build",
@@ -39,5 +48,17 @@
       "last 1 safari version"
     ]
   },
+  "keywords": [],
+  "author": "",
+  "contributors": [
+    {
+      "name": "bumsu01"
+    },
+    {
+      "name": "bbumsk2"
+    }
+  ],
+  "license": "ISC",
+  "type": "module",
   "homepage": "https://bumsu01.github.io/"
 }
