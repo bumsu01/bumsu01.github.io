@@ -1,26 +1,31 @@
 "use client";
 
-import { Global } from "@emotion/react";
-import globalStyles from "../../../styles/globalStyles";
+// import { Global } from "@emotion/react";
+// import globalStyles from "../../../styles/globalStyles";
 
 import * as S from "./AppLayout.styled";
+import React, { useState } from "react";
+import Head from "next/head";
 
 interface AppLayoutProps {
   children: React.ReactNode;
-  className?: string;
+  pageTitle: string;
 }
 
 export default function AppLayout({
   children,
-  className = undefined,
+  pageTitle = "",
 }: AppLayoutProps) {
-  return (
-    <div>
-      <Global styles={globalStyles} />
+  let titleConcat = "Responsive Sidebar Example";
 
-      <S.Container className={className}>
-        <S.Content>{children}</S.Content>
-      </S.Container>
-    </div>
+  if (pageTitle) titleConcat = pageTitle + " | " + titleConcat;
+  const [showSidebar, setShowSidebar] = useState(false);
+  return (
+    <S.Centering>
+      <Head>
+        <title>{pageTitle}</title>
+      </Head>
+      <S.FixedWidth>APP L - {children}</S.FixedWidth>
+    </S.Centering>
   );
 }
