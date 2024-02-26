@@ -1,12 +1,8 @@
 "use client";
 
-import * as S from "../screens/home";
-import Home from "./home/page";
+import type { AppProps } from "next/app";
+import RootLayout from "./layout";
 
-export default function YouthEvent() {
-  return (
-    <S.Container>
-      <Home />
-    </S.Container>
-  );
+export default function Page() {
+  return <RootLayout>My Store</RootLayout>;
 }

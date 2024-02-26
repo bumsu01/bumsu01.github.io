@@ -2,9 +2,11 @@
   "name": "bumsu01.github.io",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://bumsu01.github.io/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "serve": "npx http-server out",
     "start": "next start",
     "lint": "next lint"
   },
