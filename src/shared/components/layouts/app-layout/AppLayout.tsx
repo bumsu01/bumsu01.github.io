@@ -25,7 +25,9 @@ export default function AppLayout({
       <Head>
         <title>{pageTitle}</title>
       </Head>
-      <S.FixedWidth>APP L - {children}</S.FixedWidth>
+      <S.FixedWidth>
+        <div>Layout Folder(app-layout) - {children}</div>
+      </S.FixedWidth>
     </S.Centering>
   );
 }

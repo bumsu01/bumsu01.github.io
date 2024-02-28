@@ -955,7 +955,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:^10.0.1":
+"autoprefixer@npm:^10.4.17":
   version: 10.4.17
   resolution: "autoprefixer@npm:10.4.17"
   dependencies:
@@ -1090,19 +1090,19 @@ __metadata:
     "@types/react": "npm:^18.2.57"
     "@types/react-dom": "npm:^18"
     "@types/styled-components": "npm:^5.1.34"
-    autoprefixer: "npm:^10.0.1"
+    autoprefixer: "npm:^10.4.17"
     babel-plugin-styled-components: "npm:^2.1.4"
     eslint: "npm:^8"
     eslint-config-next: "npm:14.1.0"
     framer-motion: "npm:^11.0.5"
     next: "npm:14.1.0"
-    postcss: "npm:^8"
+    postcss: "npm:^8.4.35"
     react: "npm:^18"
     react-dom: "npm:^18"
     react-icons: "npm:^5.0.1"
     react-reveal: "npm:^1.2.2"
     sass: "npm:^1.71.1"
-    tailwindcss: "npm:^3.3.0"
+    tailwindcss: "npm:^3.4.1"
     typescript: "npm:^5.3.3"
   languageName: unknown
   linkType: soft
@@ -3562,7 +3562,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8, postcss@npm:^8.4.23":
+"postcss@npm:^8.4.23, postcss@npm:^8.4.35":
   version: 8.4.35
   resolution: "postcss@npm:8.4.35"
   dependencies:
@@ -4197,7 +4197,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:^3.3.0":
+"tailwindcss@npm:^3.4.1":
   version: 3.4.1
   resolution: "tailwindcss@npm:3.4.1"
   dependencies:
