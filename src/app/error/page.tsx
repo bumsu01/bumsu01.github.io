@@ -19,12 +19,12 @@ export default function RootError() {
     <S.ErrorLayout>
       <S.Container>
         <S.ErrorIconContainer>
-          <Image
+          {/* <Image
             src="/assets/images/dialog/negative.webp"
             width={112}
             height={112}
             alt="Negative Image"
-          />
+          /> */}
         </S.ErrorIconContainer>
         <S.TitleContainer>
           <S.Title>{TITLE}</S.Title>

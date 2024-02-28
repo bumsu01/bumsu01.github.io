@@ -1,15 +1,11 @@
 import { AppLayout } from "@/layout/app-layout";
+import "./globals.css";
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html lang="en">
-      <body>
-        <AppLayout pageTitle={"TITLE"}>PAGE-L : {children}</AppLayout>
-      </body>
-    </html>
-  );
+  // return <AppLayout pageTitle={"TITLE"}>App-Layout : {children}</AppLayout>;
+  return <div>App-Layout : {children}</div>;
 }
