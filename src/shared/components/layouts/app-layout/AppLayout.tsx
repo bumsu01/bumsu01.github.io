@@ -1,11 +1,9 @@
 "use client";
 
-// import { Global } from "@emotion/react";
-// import globalStyles from "../../../styles/globalStyles";
-
 import * as S from "./AppLayout.styled";
 import React, { useState } from "react";
 import Head from "next/head";
+import { Sidebar } from "@/organisms/sidebar";
 
 interface AppLayoutProps {
   children: React.ReactNode;
@@ -22,6 +20,7 @@ export default function AppLayout({
   const [showSidebar, setShowSidebar] = useState(false);
   return (
     <S.Centering>
+      <Sidebar></Sidebar>
       <Head>
         <title>{pageTitle}</title>
       </Head>
