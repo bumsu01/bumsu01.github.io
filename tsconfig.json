@@ -21,7 +21,9 @@
     "paths": {
       "@/*": ["./src/*"],
       "@/layout/*": ["shared/components/layouts/*"],
-      "@/component/*": ["shared/components/atoms/*"],
+      "@/atoms/*": ["shared/components/atoms/*"],
+      "@/molecules/*": ["shared/components/molecules/*"],
+      "@/organisms/*": ["shared/components/organisms/*"],
       "@/animation/*": ["shared/constant/animation/*"],
       "@/data/*": ["shared/constant/data/*"],
       "@/metadata/*": ["shared/constant/metadata/*"],
@@ -29,11 +31,12 @@
     }
   },
   "include": [
+    ".",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "dist/types/**/*.ts"
+    "out/types/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["out", "build", "node_modules"]
 }
