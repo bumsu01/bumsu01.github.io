@@ -18,15 +18,5 @@ export default function AppLayout({
 
   if (pageTitle) titleConcat = pageTitle + " | " + titleConcat;
   const [showSidebar, setShowSidebar] = useState(false);
-  return (
-    <S.Centering>
-      <Sidebar></Sidebar>
-      <Head>
-        <title>{pageTitle}</title>
-      </Head>
-      <S.FixedWidth>
-        <div>Layout Folder(app-layout) - {children}</div>
-      </S.FixedWidth>
-    </S.Centering>
-  );
+  return <Sidebar />;
 }
