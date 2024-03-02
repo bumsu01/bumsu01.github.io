@@ -1,14 +1,25 @@
 import styled from "@emotion/styled";
 
-export const Centering = styled.div`
+export const Container = styled.div`
   display: flex;
-  justify-content: center;
+  min-height: 100vh;
+  padding: 1em 1em;
+  flex-direction: row;
+  height: 100vh;
 `;
 
-export const FixedWidth = styled.div`
-  width: 500px;
-  @media (max-width: 500px) {
-    /* 화면 너비가 500px 이하가 되면 요소 너비를 100%로 고정*/
-    width: 100%;
+export const Frame = styled.div`
+    flex: 1;
+    width: 50%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    background: white;
+    height: 100vh;
+    max-height: 100%;
+    background: #ffffff;
+    box-shadow: 8px 2px 32px -2px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 10px 10px 0px;
+    z-index: 1;
   }
 `;
