@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  assetPrefix: ".",
+  // assetPrefix: ".", // static Page 이기 떄문에 설정 시 css 못잡음
+  reactStrictMode: false,
+  swcMinify: true,
+  trailingSlash: true,
   env: {
     PUBLIC_URL: "/",
   },
@@ -27,16 +30,8 @@ const nextConfig = {
       },
     ],
   },
-
-  // Optional: Change links `/me` -> `/me/` and emit `/me.html` -> `/me/index.html`
-  // trailingSlash: true,
-
-  // Optional: Prevent automatic `/me` -> `/me/`, instead preserve `href`
-  // skipTrailingSlashRedirect: true,
-  trailingSlash: true,
-
-  // Optional: Change the output directory `out` -> `dist`
-  // distDir: "dist",
+  compiler: {
+    styledComponents: true,
+  }
 };
-
 export default nextConfig;

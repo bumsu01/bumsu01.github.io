@@ -1,14 +1,16 @@
 import styled from "@emotion/styled";
 
-export const Centering = styled.div`
+export const Container = styled.div`
   display: flex;
-  justify-content: center;
+  min-height: 100vh;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
 `;
 
-export const FixedWidth = styled.div`
-  width: 500px;
-  @media (max-width: 500px) {
-    /* 화면 너비가 500px 이하가 되면 요소 너비를 100%로 고정*/
-    width: 100%;
-  }
+export const Frame = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  width: 75%;
 `;

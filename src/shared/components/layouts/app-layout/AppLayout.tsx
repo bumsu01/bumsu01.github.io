@@ -1,11 +1,9 @@
 "use client";
 
-// import { Global } from "@emotion/react";
-// import globalStyles from "../../../styles/globalStyles";
-
 import * as S from "./AppLayout.styled";
 import React, { useState } from "react";
 import Head from "next/head";
+import { Sidebar } from "@/organisms/sidebar";
 
 interface AppLayoutProps {
   children: React.ReactNode;
@@ -20,12 +18,5 @@ export default function AppLayout({
 
   if (pageTitle) titleConcat = pageTitle + " | " + titleConcat;
   const [showSidebar, setShowSidebar] = useState(false);
-  return (
-    <S.Centering>
-      <Head>
-        <title>{pageTitle}</title>
-      </Head>
-      <S.FixedWidth>APP L - {children}</S.FixedWidth>
-    </S.Centering>
-  );
+  return <Sidebar />;
 }
