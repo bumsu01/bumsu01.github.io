@@ -41,13 +41,12 @@ export default function Sidebar() {
   }, [resize, stopResizing]);
 
   return (
-    <S.Sidebar
-      className="fixed top-0 left-0 h-screen transition-transform -translate-x-full sm:translate-x-0"
-      ref={sidebarRef}
-      style={{ width: sidebarWidth }}
-      onMouseDown={(e) => e.preventDefault()}
-    >
-      <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+    <S.Sidebar ref={sidebarRef} onMouseDown={(e) => e.preventDefault()}>
+      <S.Wrapper
+        className="peek full-height h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800"
+        onMouseDown={startResizing}
+        style={{ width: sidebarWidth }}
+      >
         <ul className="space-y-2 font-medium">
           <SidebarItem itemText="home" link="/" />
           <SidebarItem itemText="home" link="/" />
@@ -61,7 +60,7 @@ export default function Sidebar() {
         >
           <div className="flex items-center mb-3">
             <span className="bg-orange-100 text-orange-800 text-sm font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-orange-200 dark:text-orange-900">
-              Beta
+              Setting
             </span>
             <button
               type="button"
@@ -76,30 +75,20 @@ export default function Sidebar() {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 14 14"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-                />
-              </svg>
+              ></svg>
             </button>
           </div>
           <p className="mb-3 text-sm text-blue-800 dark:text-blue-400">
-            Preview the new Flowbite dashboard navigation! You can turn the new
-            navigation off for a limited time in your profile.
+            Setting Blog Cookie, Theme
           </p>
           <a
             className="text-sm text-blue-800 underline font-medium hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300"
             href="#"
           >
-            Turn new navigation off
+            Turn off Theme Sight
           </a>
         </div>
-      </div>
-      <div className="app-sidebar-resizer" onMouseDown={startResizing} />
+      </S.Wrapper>
     </S.Sidebar>
   );
 }
