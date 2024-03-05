@@ -2,6 +2,7 @@ import React from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import * as S from "./Sidebar.styled";
 import { SidebarItem } from "../sidebar-item";
+import SidebarSocial from "../sidebar-social/SidebarSocial";
 
 export default function Sidebar() {
   const sidebarRef = useRef<HTMLDivElement>(null);
@@ -88,6 +89,7 @@ export default function Sidebar() {
             Turn off Theme Sight
           </a>
         </div>
+        <SidebarSocial />
       </S.Wrapper>
     </S.Sidebar>
   );
