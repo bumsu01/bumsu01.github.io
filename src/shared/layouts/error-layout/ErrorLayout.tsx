@@ -1,14 +1,12 @@
-"use client";
-
 import { useRouter } from "next/navigation";
-import { Button } from "../../shared/components/atoms/buttons";
+import { Button } from "@/atoms/buttons";
 
-import * as S from "../../screens/error/ErrorScreen.styled";
+import * as S from "./ErrorLayout.styled";
 import Image from "next/image";
 const TITLE = `페이지를
 표시할 수 없습니다`;
 
-export default function RootError() {
+export default function ErrorLayout() {
   const router = useRouter();
 
   const handleBottomButtonClick = () => {
@@ -20,11 +18,11 @@ export default function RootError() {
       <S.Container>
         <S.ErrorIconContainer>
           {/* <Image
-            src="/assets/images/dialog/negative.webp"
-            width={112}
-            height={112}
-            alt="Negative Image"
-          /> */}
+        src="/assets/images/dialog/negative.webp"
+        width={112}
+        height={112}
+        alt="Negative Image"
+      /> */}
         </S.ErrorIconContainer>
         <S.TitleContainer>
           <S.Title>{TITLE}</S.Title>
