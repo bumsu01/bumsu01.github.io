@@ -1,18 +1,18 @@
 "use client";
 
-import * as S from "./ViewLayout.styled";
+import * as S from "./AppLayout.styled";
 import React from "react";
 import Head from "next/head";
 
-interface ViewLayoutProps {
+interface AppLayoutProps {
   children: React.ReactNode;
   pageTitle: string;
 }
 
-export default function ViewLayout({
+export default function AppLayout({
   children,
   pageTitle = "",
-}: ViewLayoutProps) {
+}: AppLayoutProps) {
   let titleConcat = "Responsive Sidebar Example";
 
   if (pageTitle) titleConcat = pageTitle + " | " + titleConcat;

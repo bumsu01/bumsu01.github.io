@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import RootLayout from "./layout";
-import HomePage from "./home/page";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -12,7 +10,6 @@ export default function Page() {
     <div>
       App Page - {process.env.NEXT_PUBLIC_WEB_DOMAIN as string}
       <br />
-      <HomePage />
     </div>
   );
 }
