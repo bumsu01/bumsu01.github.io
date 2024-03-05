@@ -7,7 +7,7 @@ import { MdEmail } from "react-icons/md";
 export default function SidebarSocial() {
   return (
     <S.SidebarSocial>
-      <span className="sr-only">Social:</span>
+      <S.SrOnly>Social:</S.SrOnly>
       <ul>
         <li>
           <a
@@ -15,8 +15,8 @@ export default function SidebarSocial() {
             title="LinkedIn"
             className="no-mark-external"
           >
-            <FaLinkedin />
-            <span className="sr-only">LinkedIn</span>
+            <FaLinkedin size="32" color="#fff" />
+            <S.SrOnly>LinkedIn</S.SrOnly>
           </a>
         </li>
         <li>
@@ -25,7 +25,7 @@ export default function SidebarSocial() {
             title="GitHub"
             className="no-mark-external"
           >
-            <FaGithub />
+            <FaGithub size="32" color="#fff" />
             <span className="sr-only">GitHub</span>
           </a>
         </li>
@@ -35,7 +35,7 @@ export default function SidebarSocial() {
             title="Stack Overflow"
             className="no-mark-external"
           >
-            <BsStackOverflow />
+            <BsStackOverflow size="32" color="#fff" />
             <span className="sr-only">Stack Overflow</span>
           </a>
         </li>
@@ -45,7 +45,7 @@ export default function SidebarSocial() {
             title="Email"
             className="no-mark-external"
           >
-            <MdEmail />
+            <MdEmail size="32" color="#fff" />
             <span className="sr-only">Email</span>
           </a>
         </li>
