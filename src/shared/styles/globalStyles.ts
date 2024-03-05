@@ -16,6 +16,9 @@ const globalStyles = css`
   button {
     cursor: pointer;
   }
+  a:hover {
+    opacity: 0.6;
+  }
 `;
 
 export default globalStyles;
