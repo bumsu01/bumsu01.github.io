@@ -6,7 +6,7 @@
 🔧 Fix
 🐳 Chore
 🧪 Test
-📃 Post
+📃 Docs/Post
 🏗️ Refactor
 📦 Release
 
@@ -15,7 +15,7 @@
 > [!NOTE]
 > 리뷰어가 PR을 이해할 수 있도록 자세하게 설명해주세요
 
- <!-- 🔥 Feature / 🔧 Fix / 🎨 Style / 🏗️ Refactor / 🐳 Chore / 🧪 Test / 📃 Docs -->
+ <!-- 🔥 Feature / 🔧 Fix / 🎨 Style / 🏗️ Refactor / 🐳 Chore / 🧪 Test / 📃 Docs/Post -->
 
 ### What's Changed
 
