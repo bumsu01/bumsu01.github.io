@@ -14,3 +14,12 @@ export const Frame = styled.div`
   flex-shrink: 0;
   width: 75%;
 `;
+
+export const Centering = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const FixedWidth = styled.div`
+  width: 100%;
+`;

@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 
 import { Header } from "@/organisms/header";
 import { Sidebar } from "@/organisms/sidebar";
-import { ViewLayout } from "@/layout/view-layout";
+import { AppLayout } from "@/layout/app-layout";
 
 import * as S from "@/layout/app-layout/AppLayout.styled";
 import "./globals.css";
@@ -15,12 +15,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className="bg-gray-100">
         <S.Container>
           <Sidebar />
-          <S.Frame>
-            <Header />
-            <ViewLayout pageTitle="child">
-              <div className="p-5">{children}</div>
-            </ViewLayout>
-          </S.Frame>
+          <S.Frame>{children}</S.Frame>
         </S.Container>
       </body>
     </html>
