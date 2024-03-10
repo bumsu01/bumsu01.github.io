@@ -6,7 +6,6 @@ export const Sidebar = styled.div<{ width: number }>`
   left: calc(50% - 50vw);
   width: 100vw;
   height: 100%;
-  text-align: center;
   transform: translateX(${({ width }) => width}px) all 1s;
 
   @media (min-width: 0em) {
@@ -35,6 +34,16 @@ export const Sidebar = styled.div<{ width: number }>`
     position: fixed;
     top: 0px;
     height: 100vh;
+    animation-iteration-count: 1;
+    animation-name: fadeIn;
+    position: fixed;
+    z-index: 3;
+    max-width: 21rem;
+    opacity: 1;
+    padding-top: 5%;
+    contain: content;
+    padding: 1.5rem;
+    text-align: center;
     width: ${({ width }) => width}px;
   }
 `;
@@ -42,4 +51,14 @@ export const Sidebar = styled.div<{ width: number }>`
 export const Wrapper = styled.div<{ width: number }>`
   max-width: 100%;
   background: center / cover url(/assets/images/photo/sidebar.jpeg);
+  cursor: move;
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+
+  :active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+  }
 `;

@@ -3,7 +3,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import * as S from "./Sidebar.styled";
 import { SidebarItem } from "../sidebar-item";
 import SidebarSocial from "../sidebar-social/SidebarSocial";
-import { SidebarListData } from "@/data/SidebarData";
 import SidebarAlert from "../sidebar-alert/SidebarAlert";
 
 export default function Sidebar() {
@@ -64,18 +63,8 @@ export default function Sidebar() {
         style={{ transition: `${isResizing ? "" : "width 0.5s"}` }}
         onMouseDown={startResizing}
       >
-        <ul className="space-y-2 font-medium">
-          {SidebarListData.map((item) => {
-            return (
-              <SidebarItem
-                key={item.text}
-                itemText={item.text}
-                link={item.link}
-              />
-            );
-          })}
-        </ul>
-        <SidebarAlert />
+        <SidebarItem />
+        {/* <SidebarAlert /> */}
         <SidebarSocial />
       </S.Wrapper>
     </S.Sidebar>
