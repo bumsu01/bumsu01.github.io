@@ -18,8 +18,17 @@ export default function Sidebar() {
     []
   );
 
-  const stopResizing = useCallback(() => {
+  const stopResizing = useCallback((mouseMoveEvent: MouseEvent) => {
     setIsResizing(false);
+    if (!!sidebarRef.current) {
+      setSidebarWidth(
+        mouseMoveEvent.clientX -
+          sidebarRef.current.getBoundingClientRect().left <
+          window.innerWidth / 2
+          ? sidebarRef.current.getBoundingClientRect().left
+          : window.innerWidth
+      );
+    }
   }, []);
 
   const resize = useCallback(
@@ -44,11 +53,16 @@ export default function Sidebar() {
   }, [resize, stopResizing]);
 
   return (
-    <S.Sidebar ref={sidebarRef} onMouseDown={(e) => e.preventDefault()}>
+    <S.Sidebar
+      ref={sidebarRef}
+      width={sidebarWidth}
+      onMouseDown={(e) => e.preventDefault()}
+    >
       <S.Wrapper
-        className="peek full-height h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800"
+        className={`peek full-height h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800`}
+        width={sidebarWidth}
+        style={{ transition: `${isResizing ? "" : "width 0.5s"}` }}
         onMouseDown={startResizing}
-        style={{ width: sidebarWidth }}
       >
         <ul className="space-y-2 font-medium">
           {SidebarListData.map((item) => {
