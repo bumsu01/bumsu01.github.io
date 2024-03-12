@@ -9,6 +9,8 @@ const nextConfig = {
     PUBLIC_URL: "/",
   },
   images: {
+    loader: "akamai",
+    path: "/",
     remotePatterns: [
       {
         protocol: "https",
@@ -32,6 +34,6 @@ const nextConfig = {
   },
   compiler: {
     styledComponents: true,
-  }
+  },
 };
 export default nextConfig;

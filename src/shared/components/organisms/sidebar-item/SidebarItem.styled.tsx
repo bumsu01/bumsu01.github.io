@@ -21,9 +21,18 @@ export const SidebarListItem = styled.div`
     padding-left: 0;
   }
 
-  &li {
+  & li {
     display: list-item;
     text-align: -webkit-match-parent;
+    text-decoration-line: underline;
+    text-underline-offset: 8px;
+    border-bottom-color: rgb(255, 255, 255, 0.2);
+    text-decoration-color: rgb(255, 255, 255, 0.2);
+    transition: color 250ms, text-decoration-color 250ms, border-color 250ms;
+
+    &:hover {
+      text-decoration-color: white;
+    }
   }
 `;
 
@@ -45,8 +54,5 @@ export const SidebarListItemWrapper = styled.div`
     margin-bottom: 0.5rem;
     text-shadow: rgba(0, 0, 0, 0.25) 0.1rem 0.1rem 0.1;
     color: #fff;
-    border-bottom-color: rgba(255, 255, 255, 0.2);
-    text-decoration-color: rgba(255, 255, 255, 0.2);
-    transition: color 250ms, text-decoration-color 250ms, border-color 250ms;
   }
 `;

@@ -2,6 +2,7 @@ import React from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import * as S from "./Sidebar.styled";
 import { SidebarItem } from "../sidebar-item";
+import { SidebarProfile } from "../sidebar-profile";
 import SidebarSocial from "../sidebar-social/SidebarSocial";
 import SidebarAlert from "../sidebar-alert/SidebarAlert";
 
@@ -58,14 +59,17 @@ export default function Sidebar() {
       onMouseDown={(e) => e.preventDefault()}
     >
       <S.Wrapper
-        className={`peek full-height h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800`}
+        className={`peek full-height text-balance`}
         width={sidebarWidth}
         style={{ transition: `${isResizing ? "" : "width 0.5s"}` }}
         onMouseDown={startResizing}
       >
-        <SidebarItem />
-        {/* <SidebarAlert /> */}
-        <SidebarSocial />
+        <S.Sticky>
+          <SidebarProfile />
+          <SidebarItem />
+          {/* <SidebarAlert /> */}
+          <SidebarSocial />
+        </S.Sticky>
       </S.Wrapper>
     </S.Sidebar>
   );

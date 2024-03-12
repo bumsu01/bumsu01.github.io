@@ -38,13 +38,22 @@ export const Sidebar = styled.div<{ width: number }>`
     animation-name: fadeIn;
     position: fixed;
     z-index: 3;
-    max-width: 21rem;
     opacity: 1;
     padding-top: 5%;
     contain: content;
     padding: 1.5rem;
     text-align: center;
     width: ${({ width }) => width}px;
+  }
+
+  & a {
+    touch-action: manipulation;
+    text-decoration-style: solid;
+    transition: color 250ms, text-decoration-color 250ms, border-color 250ms;
+    color: #fff;
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+    text-decoration-color: rgba(255, 255, 255, 0.2);
+    text-shadow: rgba(0, 0, 0, 0.25) 0.1rem 0.1rem 0.15rem;
   }
 `;
 
@@ -61,4 +70,20 @@ export const Wrapper = styled.div<{ width: number }>`
     cursor: -moz-grabbing;
     cursor: -webkit-grabbing;
   }
+`;
+
+export const Sticky = styled.div`
+  text-align: center;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-name: fadeIn;
+  height: 100%;
+  padding-top: 5%;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 3;
+  max-width: 21rem;
+  padding: 1.5rem;
+  contain: content;
 `;
