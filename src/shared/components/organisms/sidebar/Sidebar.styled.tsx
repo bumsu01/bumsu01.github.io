@@ -4,7 +4,8 @@ export const Sidebar = styled.div<{ width: number }>`
   position: absolute;
   top: 0;
   left: calc(50% - 50vw);
-  width: 100vw;
+  max-width: 100vw;
+  width: ${({ width }) => width}px;
   height: 100%;
   transform: translateX(${({ width }) => width}px) all 1s;
 
