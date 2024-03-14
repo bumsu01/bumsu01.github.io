@@ -20,6 +20,7 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
+      "@/assets": ["./public/assets/*"],
       "@/layout/*": ["shared/layouts/*"],
       "@/atoms/*": ["shared/components/atoms/*"],
       "@/molecules/*": ["shared/components/molecules/*"],
