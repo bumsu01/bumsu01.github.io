@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import * as S from "./Sidebar.styled";
@@ -7,79 +8,62 @@ import SidebarSocial from "../sidebar-social/SidebarSocial";
 import SidebarAlert from "../sidebar-alert/SidebarAlert";
 
 export default function Sidebar() {
+  const windowWidth = window.innerWidth;
   const sidebarRef = useRef<HTMLDivElement>(null);
-  const [isResizing, setIsResizing] = useState(false);
-  const [sidebarWidth, setSidebarWidth] = useState(268);
-  const [mouseDownX, setMouseDownX] = useState<number>(0);
-  const [mouseDownWidth, setMouseDownWidth] = useState<number>(0);
+  const [isResizing, setIsResizing] = useState<boolean>(false);
+  const [sidebarWidth, setSidebarWidth] = useState<number>(() => initialData());
 
-  if (!!window && sidebarRef.current) {
-    console.log("window Width", window?.innerWidth);
-    console.log("window Width", window?.outerWidth);
-    console.log("ref client Width", sidebarRef.current?.clientWidth);
-    console.log("ref offset Width", sidebarRef.current?.offsetWidth);
-    console.log("ref scroll Width", sidebarRef.current?.scrollWidth);
+  function initialData(): number {
+    if (windowWidth < 1024) {
+      return 8;
+    } else if (window?.innerWidth < 1512) {
+      return 344;
+    } else {
+      return 500;
+    }
   }
+  console.log("down:", sidebarWidth);
 
-  const startResizing = useCallback(
-    (mouseDownEvent: React.MouseEvent<HTMLDivElement>) => {
-      setMouseDownWidth(sidebarWidth || 268);
-      setMouseDownX(mouseDownEvent.clientX);
-      setIsResizing(true);
-    },
-    [sidebarWidth]
-  );
+  const mouseDownHandler = useCallback(
+    (clickEvent: React.MouseEvent<Element, MouseEvent>) => {
+      const mouseMoveHandler = (moveEvent: MouseEvent) => {
+        const deltaX = moveEvent.screenX - clickEvent.screenX;
 
-  const stopResizing = useCallback((mouseMoveEvent: MouseEvent) => {
-    setIsResizing(false);
-    console.log("Resizing");
-    if (!!sidebarRef.current) {
-      setSidebarWidth(
-        mouseMoveEvent.clientX -
-          sidebarRef.current.getBoundingClientRect().left <
-          window.innerWidth / 2
-          ? sidebarRef.current.getBoundingClientRect().left
-          : window.innerWidth
-      );
-    }
-  }, []);
+        console.log("move:", sidebarWidth, deltaX);
+        setSidebarWidth(() => {
+          return sidebarWidth + deltaX;
+        });
+      };
 
-  const resize = useCallback(
-    (mouseMoveEvent: MouseEvent) => {
-      // console.log("resize start", isResizing);
-      // console.log("mouseDownX: ", mouseDownX);
-      // console.log("mouseDownWidth: ", mouseDownWidth);
-      if (isResizing && !!sidebarRef.current) {
-        setSidebarWidth(
-          mouseDownX - mouseMoveEvent.clientX < 0
-            ? mouseDownWidth + Math.abs(mouseDownX - mouseMoveEvent.clientX)
-            : mouseDownWidth - Math.abs(mouseDownX - mouseMoveEvent.clientX)
+      const mouseUpHandler = (moveEvent: MouseEvent) => {
+        const deltaX = moveEvent.screenX - clickEvent.screenX;
+        console.log(
+          "up",
+          sidebarWidth + deltaX,
+          sidebarWidth + deltaX < windowWidth / 2 ? initialData() : windowWidth
         );
-      }
-    },
-    [isResizing, mouseDownWidth, mouseDownX]
-  );
+        setSidebarWidth(() => {
+          return sidebarWidth + deltaX < windowWidth / 2
+            ? initialData()
+            : windowWidth;
+        });
+        console.log("up end:", sidebarWidth, deltaX);
+        document.removeEventListener("mousemove", mouseMoveHandler);
+      };
 
-  useEffect(() => {
-    if (!!sidebarRef.current) {
-      sidebarRef.current.addEventListener("mousemove", resize);
-      sidebarRef.current.addEventListener("mouseup", stopResizing);
-    }
-    return () => {
-      if (!!sidebarRef.current) {
-        sidebarRef.current.removeEventListener("mousemove", resize);
-        sidebarRef.current.removeEventListener("mouseup", stopResizing);
-      }
-    };
-  }, [resize, stopResizing]);
+      document.addEventListener("mousemove", mouseMoveHandler);
+      document.addEventListener("mouseup", mouseUpHandler, { once: true });
+    },
+    []
+  );
 
   return (
-    <S.Sidebar ref={sidebarRef} width={sidebarWidth}>
+    <S.Sidebar ref={sidebarRef} onMouseDown={mouseDownHandler}>
       <S.Wrapper
-        className={`peek full-height text-balance`}
-        width={sidebarWidth}
-        style={{ transition: `${isResizing ? "" : "width 0.5s"}` }}
-        onMouseDown={startResizing}
+        style={{
+          maxWidth: `${windowWidth}px`,
+          width: `${sidebarWidth}px`,
+        }}
       >
         <S.Sticky>
           <SidebarProfile />
