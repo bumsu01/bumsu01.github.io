@@ -6,6 +6,10 @@ export const Container = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   align-items: stretch;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 `;
 
 export const Frame = styled.div`

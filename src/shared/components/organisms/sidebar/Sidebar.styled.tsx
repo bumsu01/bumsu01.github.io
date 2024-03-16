@@ -1,51 +1,10 @@
 import styled from "@emotion/styled";
 
-export const Sidebar = styled.div<{ width: number }>`
+export const Sidebar = styled.div`
   position: absolute;
   top: 0;
   left: calc(50% - 50vw);
-  max-width: 100vw;
-  width: ${({ width }) => width}px;
   height: 100%;
-  transform: translateX(${({ width }) => width}px) all 1s;
-
-  @media (min-width: 0em) {
-    min-width: 0.5rem;
-    .peek {
-      width: 0.5rem;
-      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
-    }
-  }
-  @media (min-width: 64em) {
-    min-width: 21rem;
-    .peek {
-      min-width: 21rem;
-      width: 21rem;
-    }
-  }
-  @media (min-width: 1664px) {
-    min-width: calc(50% - 31rem);
-    .peek {
-      min-width: calc(50% - 31rem);
-      width: calc(50% - 31rem);
-    }
-  }
-
-  .full-height {
-    position: fixed;
-    top: 0px;
-    height: 100vh;
-    animation-iteration-count: 1;
-    animation-name: fadeIn;
-    position: fixed;
-    z-index: 3;
-    opacity: 1;
-    padding-top: 5%;
-    contain: content;
-    padding: 1.5rem;
-    text-align: center;
-    width: ${({ width }) => width}px;
-  }
 
   & a {
     touch-action: manipulation;
@@ -58,13 +17,23 @@ export const Sidebar = styled.div<{ width: number }>`
   }
 `;
 
-export const Wrapper = styled.div<{ width: number }>`
-  max-width: 100%;
+export const Wrapper = styled.div`
   background: center / cover url(/assets/images/photo/sidebar.jpeg);
+  text-align: center;
+  position: fixed;
+  top: 0px;
+  height: 100vh;
+  padding-top: 5%;
+  padding: 0.5rem;
+  contain: content;
   cursor: move;
   cursor: grab;
   cursor: -moz-grab;
   cursor: -webkit-grab;
+  animation-iteration-count: 1;
+  animation-name: fadeIn;
+  opacity: 1;
+  z-index: 3;
 
   :active {
     cursor: grabbing;
@@ -74,17 +43,16 @@ export const Wrapper = styled.div<{ width: number }>`
 `;
 
 export const Sticky = styled.div`
+  position: fixed;
+  left: 50%;
+  height: 100%;
+  contain: content;
   text-align: center;
+  z-index: 3;
+  padding-top: 5%;
+  padding: 0.5rem;
   animation-duration: 1s;
   animation-iteration-count: 1;
   animation-name: fadeIn;
-  height: 100%;
-  padding-top: 5%;
-  position: fixed;
-  left: 50%;
   transform: translate(-50%, 0);
-  z-index: 3;
-  max-width: 21rem;
-  padding: 1.5rem;
-  contain: content;
 `;

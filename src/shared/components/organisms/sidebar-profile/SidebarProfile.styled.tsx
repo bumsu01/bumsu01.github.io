@@ -26,6 +26,7 @@ export const SidebarProfile = styled.div`
 `;
 
 export const SidebarProfileAvatar = styled.div`
+  pointer-events: none;
   display: contents;
   width: 100%;
 `;
