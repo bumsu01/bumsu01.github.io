@@ -1,6 +1,5 @@
 import { SidebarProfileData } from "@/data/SidebarData";
 import * as S from "./SidebarProfile.styled";
-import Image from "next/image";
 import { CloudFrontImage } from "@/atoms/images";
 
 export default function SidebarProfile() {
