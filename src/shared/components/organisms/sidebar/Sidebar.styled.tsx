@@ -42,7 +42,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Sticky = styled.div<{ width: number }>`
+export const Sticky = styled.div`
   position: fixed;
   left: 50%;
   height: 100%;
