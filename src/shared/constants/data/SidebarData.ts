@@ -1,3 +1,8 @@
+export const SidebarProfileData = {
+  name: "Glenn",
+  mentation: "develop steadily and faithfully",
+};
+
 export const SidebarListData = [
   {
     text: "About",

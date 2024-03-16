@@ -1,61 +1,58 @@
 import styled from "@emotion/styled";
 
 export const Sidebar = styled.div`
-  position: static;
-  flex-shrink: 0;
-  display: flex;
-  border-right: #e9e9e9 1px solid;
-  flex-direction: row;
-  background: #ffffff;
-  box-shadow: -8px 2px 22px -7px rgba(0, 0, 0, 0.25);
-  border-radius: 10px 0px 0px 10px;
-  z-index: 2;
-  flex-grow: 1;
-  cursor: grab;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 50vw);
+  height: 100%;
 
-  @media (min-width: 0em) {
-    min-width: 0.5rem;
-    .peek {
-      width: 0.5rem;
-      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
-    }
-  }
-  @media (min-width: 64em) {
-    min-width: 21rem;
-    .peek {
-      min-width: 21rem;
-      width: 21rem;
-    }
-  }
-  @media (min-width: 1664px) {
-    min-width: calc(50% - 31rem);
-    .peek {
-      min-width: calc(50% - 31rem);
-      width: calc(50% - 31rem);
-    }
-  }
-
-  .full-height {
-    position: fixed;
-    top: 0px;
-    height: 100vh;
-  }
-
-  .app-sidebar-resizer {
-    flex-grow: 0;
-    flex-shrink: 0;
-    flex-basis: 6px;
-    justify-self: flex-end;
-    cursor: col-resize;
-    resize: horizontal;
-  }
-
-  .app-sidebar-resizer:hover {
-    width: 3px;
-    background: #c1c3c5b4;
+  & a {
+    touch-action: manipulation;
+    text-decoration-style: solid;
+    transition: color 250ms, text-decoration-color 250ms, border-color 250ms;
+    color: #fff;
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+    text-decoration-color: rgba(255, 255, 255, 0.2);
+    text-shadow: rgba(0, 0, 0, 0.25) 0.1rem 0.1rem 0.15rem;
   }
 `;
 
 export const Wrapper = styled.div`
-  transform: translate(0px, 0px);
+  background: center / cover url(/assets/images/photo/sidebar.jpeg);
+  text-align: center;
+  position: fixed;
+  top: 0px;
+  height: 100vh;
+  padding-top: 5%;
+  padding: 0.5rem;
+  contain: content;
+  cursor: move;
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+  animation-iteration-count: 1;
+  animation-name: fadeIn;
+  opacity: 1;
+  z-index: 3;
+
+  :active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+  }
+`;
+
+export const Sticky = styled.div`
+  position: fixed;
+  left: 50%;
+  height: 100%;
+  contain: content;
+  text-align: center;
+  z-index: 3;
+  padding-top: 5%;
+  padding: 0.5rem;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-name: fadeIn;
+  transform: translate(-50%, 0);
 `;
