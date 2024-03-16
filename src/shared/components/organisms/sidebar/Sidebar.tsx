@@ -8,8 +8,6 @@ import SidebarSocial from "../sidebar-social/SidebarSocial";
 import SidebarAlert from "../sidebar-alert/SidebarAlert";
 import useWindowResize from "shared/hooks/useWindowResize";
 
-type windowSizeType = { width?: number; height?: number };
-
 export default function Sidebar() {
   const sidebarRef = useRef<HTMLDivElement>(null);
   const [windowWidth, setWindowWidth] = useState<number>(0);
