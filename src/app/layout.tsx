@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 
 import { Header } from "@/organisms/header";
 import { Sidebar } from "@/organisms/sidebar";
@@ -11,6 +11,7 @@ import * as S from "@/layout/app-layout/AppLayout.styled";
 import "./globals.css";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
+  const [selectPage, setSelectPage] = useState<string>("home");
   const windowSize = useWindowResize();
 
   return (
@@ -24,7 +25,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <S.Frame
             style={{ position: "absolute", left: windowSize.initSidebar + 20 }}
           >
-            {children}
+            <AppLayout pageTitle={selectPage}>{children}</AppLayout>
           </S.Frame>
         </S.Container>
       </body>

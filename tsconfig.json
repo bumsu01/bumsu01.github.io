@@ -28,7 +28,8 @@
       "@/animation/*": ["shared/constants/animation/*"],
       "@/data/*": ["shared/constants/data/*"],
       "@/metadata/*": ["shared/constants/metadata/*"],
-      "@/style/*": ["shared/styles/*"]
+      "@/style/*": ["shared/styles/*"],
+      "@/store/*": ["shared/store/*"]
     }
   },
   "include": [
