@@ -1,0 +1,32 @@
+body {
+  background-color: black;
+}
+._3eh4yn0 {
+  padding: 12px;
+  border: none;
+  background-color: red;
+  color: white;
+}
+._3eh4yn0:hover {
+  opacity: 0.7;
+}
+._3eh4yn2 {
+  --my-var: blue;
+  --_3eh4yn1: red;
+  background: var(--my-var);
+  color: var(--_3eh4yn1);
+}
+._3eh4yn3 {
+  --_3eh4yn4: black;
+  --_3eh4yn5: white;
+}
+._3eh4yn6 {
+  --_3eh4yn4: white;
+  --_3eh4yn5: black;
+}
+._3eh4yn7 {
+  background: var(--_3eh4yn4);
+  color: var(--_3eh4yn5);
+}
+
+/*# sourceMappingURL=stories-Test-stories.css.map*/
