@@ -38,7 +38,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "out/types/**/*.ts"
+    "out/types/**/*.ts",
+    "src/shared/styles/globalStyles.js"
   ],
   "exclude": ["out", "build", "node_modules"]
 }
