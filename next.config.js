@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
+
+const { createVanillaExtractPlugin } = require("@vanilla-extract/next-plugin");
+const withVanillaExtract = createVanillaExtractPlugin();
+
 const nextConfig = {
   output: "export",
   // assetPrefix: ".", // static Page 이기 떄문에 설정 시 css 못잡음
@@ -36,4 +40,4 @@ const nextConfig = {
     styledComponents: true,
   },
 };
-export default nextConfig;
+module.exports = withVanillaExtract(nextConfig);

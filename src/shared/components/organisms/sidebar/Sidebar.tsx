@@ -1,35 +1,29 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React from "react";
-import { useCallback, useEffect, useRef, useState } from "react";
+import React, { useEffect } from "react";
+import { useCallback, useRef, useState } from "react";
 import * as S from "./Sidebar.styled";
 import { SidebarItem } from "../sidebar-item";
 import { SidebarProfile } from "../sidebar-profile";
 import SidebarSocial from "../sidebar-social/SidebarSocial";
 import SidebarAlert from "../sidebar-alert/SidebarAlert";
 
-export default function Sidebar() {
+export default function Sidebar({
+  windowWidth = 1024,
+  initSidebarWidth,
+}: {
+  windowWidth?: number;
+  initSidebarWidth: number;
+}) {
   const sidebarRef = useRef<HTMLDivElement>(null);
-  const [windowWidth, setWindowWidth] = useState<number>(0);
-  const [sidebarWidth, setSidebarWidth] = useState<number>(() => initialData());
+  const [sidebarWidth, setSidebarWidth] = useState<number>(initSidebarWidth);
 
   useEffect(() => {
-    console.log(window.innerWidth);
-    if (typeof window === "undefined") {
-      return;
-    }
-    setWindowWidth(window.innerWidth);
-    setSidebarWidth(window.innerWidth);
-  }, [window.innerWidth]);
-
-  function initialData(): number {
-    if (windowWidth < 1024) {
-      return 8;
-    } else if (windowWidth < 1512) {
-      return 344;
+    if (sidebarWidth === 8 || sidebarWidth === 344 || sidebarWidth === 500) {
+      setSidebarWidth(initSidebarWidth);
     } else {
-      return 500;
+      setSidebarWidth(windowWidth);
     }
-  }
+  }, [initSidebarWidth, windowWidth]);
 
   const mouseDownHandler = useCallback(
     (clickEvent: React.MouseEvent<Element, MouseEvent>) => {
@@ -44,8 +38,8 @@ export default function Sidebar() {
         const deltaX = moveEvent.screenX - clickEvent.screenX;
         setSidebarWidth(() => {
           return sidebarWidth + deltaX < windowWidth / 2
-            ? initialData()
-            : windowWidth;
+            ? initSidebarWidth
+            : window.innerWidth;
         });
         document.removeEventListener("mousemove", mouseMoveHandler);
       };

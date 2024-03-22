@@ -8,9 +8,7 @@ interface ImageLoaderProps {
 }
 
 const CloudFrontImageLoader = ({ src, width, quality }: ImageLoaderProps) => {
-  return `${process.env.NEXT_PUBLIC_WEB_DOMAIN as string}${src}?w=${width}&q=${
-    quality || 75
-  }`;
+  return `${src}?w=${width}&q=${quality || 75}`;
 };
 
 interface CloudFrontImageProps extends ImageProps {
