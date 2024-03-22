@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+FORBIDDEN_REF_MAIN="refs/heads/main"
+FORBIDDEN_REF_DEV="refs/heads/dev"
+
+if read local_ref local_sha remote_ref remote_sha
+then
+    if [ "$remote_ref" == "$FORBIDDEN_REF_MAIN" ] || [ "$remote_ref" == "$FORBIDDEN_REF_DEV" ]
+    then
+        echo "DO NOT PUSH TO MAIN OR DEV"
+        exit 1 
+    fi
+fi
+
+exit 0
