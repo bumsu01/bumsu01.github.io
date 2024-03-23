@@ -1,8 +1,8 @@
-import { useRouter } from "next/navigation";
-import { Button } from "@/atoms/buttons";
+import { useRouter } from 'next/navigation';
+import { Button } from '@/atoms/button';
 
-import * as S from "./ErrorLayout.styled";
-import Image from "next/image";
+import * as S from './ErrorLayout.styled';
+import Image from 'next/image';
 const TITLE = `페이지를
 표시할 수 없습니다`;
 
