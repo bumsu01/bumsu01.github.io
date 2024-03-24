@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import Image, { ImageProps } from "next/image";
+import Image, { ImageProps } from 'next/image';
 
 interface ImageLoaderProps {
   src: string;
@@ -15,10 +15,7 @@ interface CloudFrontImageProps extends ImageProps {
   autoHeight?: boolean;
 }
 
-export default function CloudFrontImage({
-  autoHeight = false,
-  ...props
-}: CloudFrontImageProps) {
+export default function CloudFrontImage({ autoHeight = false, ...props }: CloudFrontImageProps) {
   if (autoHeight) {
     return (
       <Image
@@ -26,7 +23,7 @@ export default function CloudFrontImage({
         width={0}
         height={0}
         sizes="100vw"
-        style={{ width: "100%", height: "auto", aspectRatio: "auto" }}
+        style={{ width: '100%', height: 'auto', aspectRatio: 'auto' }}
         {...props}
       />
     );

@@ -1,33 +1,31 @@
-import { ImGithub } from "react-icons/im";
-import { SiTistory } from "react-icons/si";
-import { SiInstagram } from "react-icons/si";
-import { SiNaver } from "react-icons/si";
+import { ImGithub } from 'react-icons/im';
+import { SiTistory, SiInstagram, SiNaver } from 'react-icons/si';
 
 interface LinksType {
   title: string;
-  icon: any;
+  icon: React.JSX.Element;
   link: string;
 }
 
 export const LinksData: LinksType[] = [
   {
-    title: "GitHub",
+    title: 'GitHub',
     icon: <ImGithub color="#000000dc" />,
-    link: "https://github.com/bumsu01",
+    link: 'https://github.com/bumsu01',
   },
   {
-    title: "LinkedIn",
+    title: 'LinkedIn',
     icon: <SiTistory color="#000000dc" />,
-    link: "https://bbmsk2.tistory.com/",
+    link: 'https://bbmsk2.tistory.com/',
   },
   {
-    title: "Twitter",
+    title: 'Twitter',
     icon: <SiNaver color="#000000dc" />,
-    link: "https://blog.naver.com/bumsu01",
+    link: 'https://blog.naver.com/bumsu01',
   },
   {
-    title: "Instagram",
+    title: 'Instagram',
     icon: <SiInstagram color="#000000dc" />,
-    link: "https://www.instagram.com/bbumskee",
+    link: 'https://www.instagram.com/bbumskee',
   },
 ];

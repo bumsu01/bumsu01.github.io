@@ -1,0 +1,13 @@
+npm ERR! code 127
+npm ERR! path /Users/bumsu/Desktop/workspace/bumsu01.github.io/node_modules/.pnpm/url-loader@4.1.1_webpack@5.91.0/node_modules/url-loader
+npm ERR! command failed
+npm ERR! command sh -c npm run build
+npm ERR! > url-loader@4.1.1 prebuild
+npm ERR! > npm run clean
+npm ERR! 
+npm ERR! 
+npm ERR! > url-loader@4.1.1 clean
+npm ERR! > del-cli dist
+npm ERR! sh: del-cli: command not found
+
+npm ERR! A complete log of this run can be found in: /Users/bumsu/.npm/_logs/2024-03-23T14_01_30_442Z-debug-0.log

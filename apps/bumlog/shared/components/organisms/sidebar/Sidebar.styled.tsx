@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const Sidebar = styled.div`
   position: absolute;
@@ -9,7 +9,10 @@ export const Sidebar = styled.div`
   & a {
     touch-action: manipulation;
     text-decoration-style: solid;
-    transition: color 250ms, text-decoration-color 250ms, border-color 250ms;
+    transition:
+      color 250ms,
+      text-decoration-color 250ms,
+      border-color 250ms;
     color: #fff;
     border-bottom-color: rgba(255, 255, 255, 0.2);
     text-decoration-color: rgba(255, 255, 255, 0.2);

@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 const useWindowResize = () => {
-  type windowSizeType = {
+  type WindowSizeType = {
     width?: number;
     height?: number;
     initSidebar: number;
   };
-  const [windowSize, setWindowSize] = useState<windowSizeType>({
+  const [windowSize, setWindowSize] = useState<WindowSizeType>({
     width: undefined,
     height: undefined,
     initSidebar: 344,
@@ -15,15 +15,15 @@ const useWindowResize = () => {
   const getInitSidebarWidth = () => {
     if (window.innerWidth < 1024) {
       return 8;
-    } else if (window.innerWidth < 1512) {
-      return 344;
-    } else {
-      return 500;
     }
+    if (window.innerWidth < 1512) {
+      return 344;
+    }
+    return 500;
   };
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
       const handleResize = () => {
         setWindowSize({
           width: window.innerWidth,
@@ -32,16 +32,15 @@ const useWindowResize = () => {
         });
       };
 
-      window.addEventListener("resize", handleResize);
+      window.addEventListener('resize', handleResize);
 
       handleResize();
-      return () => window.removeEventListener("resize", handleResize);
-    } else {
-      return () =>
-        window.removeEventListener("resize", () => {
-          return null;
-        });
+      return () => window.removeEventListener('resize', handleResize);
     }
+    return () =>
+      window.removeEventListener('resize', () => {
+        return null;
+      });
   }, []);
   return windowSize;
 };
