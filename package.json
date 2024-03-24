@@ -4,8 +4,10 @@
   "scripts": {
     "build": "turbo build",
     "build:bumlog": "turbo build --filter=bumlog",
+    "build:bumtory": "turbo build --filter=bumtory-book",
     "dev": "turbo dev",
     "dev:bumlog": "turbo run dev --filter=bumlog",
+    "dev:bumtory": "turbo run dev --filter=bumtory-book",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "postinstall": "husky install"
