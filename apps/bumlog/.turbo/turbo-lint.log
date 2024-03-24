@@ -1,0 +1,9 @@
+
+> bumlog@0.1.0 lint /Users/bumsu/Desktop/workspace/bumsu01.github.io/apps/bumlog
+> next lint
+
+Error while loading rule '@typescript-eslint/no-unsafe-member-access': You have used a rule which requires parserServices to be generated. You must therefore provide a value for the "parserOptions.project" property for @typescript-eslint/parser.
+Parser: /Users/bumsu/Desktop/workspace/bumsu01.github.io/node_modules/.pnpm/babel-eslint@8.2.6/node_modules/babel-eslint/lib/index.js
+Note: detected a parser other than @typescript-eslint/parser. Make sure the parser is configured to forward "parserOptions.project" to @typescript-eslint/parser.
+Occurred while linting /Users/bumsu/Desktop/workspace/bumsu01.github.io/apps/bumlog/app/about/page.tsx
+[41m[30m ELIFECYCLE [39m[49m [31mCommand failed with exit code 1.[39m
