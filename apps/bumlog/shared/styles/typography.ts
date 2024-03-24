@@ -1,5 +1,7 @@
-import { css } from "@emotion/react";
-import localFont from "next/font/local";
+/* eslint-disable camelcase */
+/* eslint-disable @typescript-eslint/naming-convention */
+import { css } from '@emotion/react';
+import localFont from 'next/font/local';
 
 const black = 900;
 const bold = 700;
@@ -15,7 +17,7 @@ interface GenerateFontProps {
 export const generateFont = ({
   fontWeight,
   fontSize,
-  lineHeight = "140%",
+  lineHeight = '140%',
 }: GenerateFontProps) => css`
   font-weight: ${fontWeight};
   font-size: ${fontSize}px;
@@ -26,24 +28,24 @@ export const generateFont = ({
 export const fontConfig = localFont({
   src: [
     {
-      path: "./assets/fonts/Pretendard-Regular.subset.woff2",
-      weight: "400",
-      style: "normal",
+      path: './assets/fonts/Pretendard-Regular.subset.woff2',
+      weight: '400',
+      style: 'normal',
     },
     {
-      path: "./assets/fonts/Pretendard-Medium.subset.woff2",
-      weight: "500",
-      style: "normal",
+      path: './assets/fonts/Pretendard-Medium.subset.woff2',
+      weight: '500',
+      style: 'normal',
     },
     {
-      path: "./assets/fonts/Pretendard-Bold.subset.woff2",
-      weight: "700",
-      style: "normal",
+      path: './assets/fonts/Pretendard-Bold.subset.woff2',
+      weight: '700',
+      style: 'normal',
     },
     {
-      path: "./assets/fonts/Pretendard-Black.subset.woff2",
-      weight: "900",
-      style: "normal",
+      path: './assets/fonts/Pretendard-Black.subset.woff2',
+      weight: '900',
+      style: 'normal',
     },
   ],
 });
@@ -59,53 +61,53 @@ export const H3_R = generateFont({ fontWeight: regular, fontSize: 18 });
 export const Body1 = generateFont({
   fontWeight: medium,
   fontSize: 16,
-  lineHeight: "160%",
+  lineHeight: '160%',
 });
 export const Body1_B = generateFont({
   fontWeight: bold,
   fontSize: 16,
-  lineHeight: "160%",
+  lineHeight: '160%',
 });
 export const Body1_R = generateFont({
   fontWeight: regular,
   fontSize: 16,
-  lineHeight: "160%",
+  lineHeight: '160%',
 });
 export const Body2 = generateFont({
   fontWeight: medium,
   fontSize: 14,
-  lineHeight: "160%",
+  lineHeight: '160%',
 });
 export const Body2_B = generateFont({
   fontWeight: bold,
   fontSize: 14,
-  lineHeight: "160%",
+  lineHeight: '160%',
 });
 export const Body2_R = generateFont({
   fontWeight: regular,
   fontSize: 14,
-  lineHeight: "160%",
+  lineHeight: '160%',
 });
 
 export const Feed_Body = generateFont({
   fontWeight: 500,
   fontSize: 18,
-  lineHeight: "180%",
+  lineHeight: '180%',
 });
 export const Feed_Caption1 = generateFont({
   fontWeight: 400,
   fontSize: 13,
-  lineHeight: "140%",
+  lineHeight: '140%',
 });
 export const Feed_Title = generateFont({
   fontWeight: 700,
   fontSize: 22,
-  lineHeight: "140%",
+  lineHeight: '140%',
 });
 export const Feed_Caption2 = generateFont({
   fontWeight: 400,
   fontSize: 12,
-  lineHeight: "140%",
+  lineHeight: '140%',
 });
 
 export const Caption1 = generateFont({ fontWeight: regular, fontSize: 13 });

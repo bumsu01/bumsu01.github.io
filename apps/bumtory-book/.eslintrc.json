@@ -1,60 +1,7 @@
 {
   "root": true,
-  "extends": ["bumsu", "plugin:storybook/recommended"],
+  "extends": ["next", "next/core-web-vitals", "plugin:storybook/recommended", "prettier"],
   "rules": {
-    "import/order": [
-      "error",
-      {
-        "newlines-between": "always",
-        "groups": [
-          "builtin",
-          "external",
-          "internal",
-          "parent",
-          ["sibling", "index", "object", "type"]
-        ],
-        "pathGroups": [
-          {
-            "pattern": "react",
-            "group": "builtin"
-          },
-          {
-            "pattern": "next",
-            "group": "builtin"
-          },
-
-          {
-            "pattern": "next/**",
-            "group": "builtin"
-          },
-          {
-            "pattern": "@storybook/**",
-            "group": "builtin",
-            "position": "after"
-          },
-          {
-            "pattern": "@bumsu/**",
-            "group": "internal",
-            "position": "before"
-          },
-          {
-            "pattern": "@/**",
-            "group": "internal"
-          }
-        ],
-        "pathGroupsExcludedImportTypes": [
-          "react",
-          "next",
-          "next/**",
-          "storybook/**",
-          "@bumsu/**",
-          "@/**"
-        ],
-        "alphabetize": {
-          "order": "asc",
-          "caseInsensitive": true
-        }
-      }
-    ]
+    "@next/next/no-html-link-for-pages": "off"
   }
 }

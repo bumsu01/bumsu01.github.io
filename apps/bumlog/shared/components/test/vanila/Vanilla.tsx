@@ -1,7 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React from "react";
-import { useState } from "react";
-import { boxStyle, buttonStyle, darkTheme, whiteTheme } from "./Vanilla.css";
+import React from 'react';
+import { useState } from 'react';
+
+import { boxStyle, buttonStyle, darkTheme, whiteTheme } from './Vanilla.css';
 
 export default function Vanilla() {
   const [isDarkTheme, setIsDarkTheme] = useState<boolean>(false);
@@ -16,10 +17,9 @@ export default function Vanilla() {
 
       <div className={isDarkTheme ? darkTheme : whiteTheme}>
         <div className={boxStyle}>box</div>
-        <button className={buttonStyle} onClick={onClickSwitchDarkModeButton}>
+        <button type="button" className={buttonStyle} onClick={onClickSwitchDarkModeButton}>
           Button
         </button>
-        <div></div>
       </div>
     </div>
   );

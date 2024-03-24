@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const SidebarProfile = styled.div`
   box-sizing: border-box;
@@ -45,7 +45,10 @@ export const SidebarProfileTitle = styled.div`
   text-decoration-line: underline;
   text-underline-offset: 8px;
   border-bottom-color: rgb(255, 255, 255, 0.2);
-  transition: color 250ms, text-decoration-color 250ms, border-color 250ms;
+  transition:
+    color 250ms,
+    text-decoration-color 250ms,
+    border-color 250ms;
 
   &:hover {
     text-decoration-color: white;

@@ -1,0 +1,78 @@
+🔎 checking possible migrations..
+
+🔎 found a 'remove-jest-testing-library' migration:
+╭ Automigration detected ──────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                                              │
+│   Attention: We've detected that you're using the following packages which are known to be incompatible since Storybook 8:   │
+│                                                                                                                              │
+│   - @storybook/testing-library                                                                                               │
+│                                                                                                                              │
+│   We will uninstall them for you and install @storybook/test instead.                                                        │
+│                                                                                                                              │
+│   Also, we can help you migrate your stories to use the new package.                                                         │
+│                                                                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+? Do you want to run the 'remove-jest-testing-library' migration on your project? › (Y/n)✔ Do you want to run the 'remove-jest-testing-library' migration on your project? … yes
+
+An error occurred while installing dependencies:
+NPM error 127
+
+Please check the logfile generated at ./storybook.log for troubleshooting and try again.
+❌ error when running remove-jest-testing-library migration
+HandledError: Error: NPM error 127
+
+Please check the logfile generated at ./storybook.log for troubleshooting and try again.
+    at NPMProxy.addDependencies (/Users/bumsu/.npm/_npx/bc7e1e37fcb46ffc/node_modules/@storybook/core-common/dist/index.js:33:75)
+    at async Object.run (/Users/bumsu/.npm/_npx/bc7e1e37fcb46ffc/node_modules/@storybook/cli/dist/generate.js:508:296)
+    ... 3 lines matching cause stack trace ...
+    at async Command.<anonymous> (/Users/bumsu/.npm/_npx/bc7e1e37fcb46ffc/node_modules/@storybook/cli/dist/generate.js:664:2803) {
+  handled: true,
+  cause: Error: NPM error 127
+  
+  Please check the logfile generated at ./storybook.log for troubleshooting and try again.
+      at NPMProxy.runAddDeps (/Users/bumsu/.npm/_npx/bc7e1e37fcb46ffc/node_modules/@storybook/core-common/dist/index.js:35:5643)
+      at async NPMProxy.addDependencies (/Users/bumsu/.npm/_npx/bc7e1e37fcb46ffc/node_modules/@storybook/core-common/dist/index.js:32:927)
+      at async Object.run (/Users/bumsu/.npm/_npx/bc7e1e37fcb46ffc/node_modules/@storybook/cli/dist/generate.js:508:296)
+      at async runFixes (/Users/bumsu/.npm/_npx/bc7e1e37fcb46ffc/node_modules/@storybook/cli/dist/generate.js:598:1794)
+      at async automigrate (/Users/bumsu/.npm/_npx/bc7e1e37fcb46ffc/node_modules/@storybook/cli/dist/generate.js:596:1629)
+      at async doAutomigrate (/Users/bumsu/.npm/_npx/bc7e1e37fcb46ffc/node_modules/@storybook/cli/dist/generate.js:596:651)
+      at async Command.<anonymous> (/Users/bumsu/.npm/_npx/bc7e1e37fcb46ffc/node_modules/@storybook/cli/dist/generate.js:664:2803)
+}
+
+
+🔎 found a 'webpack5-compiler-setup' migration:
+╭ Migration notification ──────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                                          │
+│   Storybook now detects whether it should use Babel or SWC as a compiler by applying the same logic as Next.js itself:   │
+│                                                                                                                          │
+│     - If you have a .babelrc (or babel.config.js) file in your project, Storybook will use Babel as the compiler.        │
+│     - If you have a .babelrc (or babel.config.js) file in your project and you have set                                  │
+│       experimental.forceSwcTransforms = true in your next.config.js file,                                                │
+│       Storybook will use SWC as the compiler.                                                                            │
+│     - If you don't have a .babelrc (or babel.config.js) file in your project, Storybook will use SWC as the compiler.    │
+│                                                                                                                          │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+? Do you want to continue? › (Y/n)✔ Do you want to continue? … yes
+
+╭ Migration check ran with failures ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                               │
+│   Failed migrations:                                                                                                                                          │
+│                                                                                                                                                               │
+│   remove-jest-testing-library:                                                                                                                                │
+│   Error: NPM error 127                                                                                                                                        │
+│                                                                                                                                                               │
+│   Please check the logfile generated at ./storybook.log for troubleshooting and try again.                                                                    │
+│                                                                                                                                                               │
+│   You can find the full logs in /Users/bumsu/Desktop/workspace/bumsu01.github.io/apps/bumtory-book/migration-storybook.log                                    │
+│                                                                                                                                                               │
+│   ─────────────────────────────────────────────────                                                                                                           │
+│                                                                                                                                                               │
+│   If you'd like to run the migrations again, you can do so by running 'npx storybook automigrate'                                                             │
+│                                                                                                                                                               │
+│   The automigrations try to migrate common patterns in your project, but might not contain everything needed to migrate to the latest version of Storybook.   │
+│                                                                                                                                                               │
+│   Please check the changelog and migration guide for manual migrations and more information: https://storybook.js.org/docs/8.0/migration-guide                │
+│   And reach out on Discord if you need help: https://discord.gg/storybook                                                                                     │
+│                                                                                                                                                               │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+

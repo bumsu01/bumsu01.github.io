@@ -1,5 +1,5 @@
-import { create } from "zustand";
-import { devtools, persist } from "zustand/middleware";
+import { create } from 'zustand';
+import { devtools, persist } from 'zustand/middleware';
 
 interface BearState {
   bears: number;
@@ -15,9 +15,9 @@ const useBearStore = create<BearState>()(
         increase: () => set((state) => ({ bears: state.bears + 1 })),
         removeAllBears: () => set({ bears: 0 }),
       }),
-      { name: "bearStore" }
-    )
-  )
+      { name: 'bearStore' },
+    ),
+  ),
 );
 
 export default useBearStore;

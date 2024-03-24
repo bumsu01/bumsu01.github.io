@@ -1,1 +1,1 @@
-export { default as SidebarSocial } from "./SidebarSocial";
+export { default as SidebarSocial } from './SidebarSocial';

@@ -1,1 +1,1 @@
-export * from "./cloudfront-image";
+export * from './cloudfront-image';

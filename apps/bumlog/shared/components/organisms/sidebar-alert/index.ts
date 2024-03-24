@@ -1,1 +1,1 @@
-export { default as SidebarAlert } from "./SidebarAlert";
+export { default as SidebarAlert } from './SidebarAlert';
