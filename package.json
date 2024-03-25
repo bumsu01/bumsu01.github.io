@@ -10,13 +10,15 @@
     "dev:bumtory": "turbo run dev --filter=bumtory-book",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "cz": "./node_modules/cz-customizable/standalone.js"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.2.1",
     "@commitlint/config-conventional": "^19.1.0",
     "@bumsu/tsconfig": "workspace:*",
     "eslint-config-global": "workspace:*",
+    "cz-customizable": "^7.0.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
@@ -31,5 +33,10 @@
       "eslint --fix",
       "prettier --write"
     ]
+  },
+  "config": {
+    "cz-customizable": {
+      "config": "cz-config.js"
+    }
   }
 }
