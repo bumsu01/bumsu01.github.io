@@ -20,16 +20,16 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@/assets": ["./public/assets/*"],
-      "@/layout/*": ["./shared/layouts/*"],
-      "@/atoms/*": ["./shared/components/atoms/*"],
-      "@/molecules/*": ["./hared/components/molecules/*"],
-      "@/organisms/*": ["./shared/components/organisms/*"],
-      "@/animation/*": ["./shared/constants/animation/*"],
-      "@/data/*": ["./shared/constants/data/*"],
-      "@/metadata/*": ["./shared/constants/metadata/*"],
-      "@/style/*": ["./shared/styles/*"],
-      "@/store/*": ["./shared/store/*"]
+      "@assets": ["./public/assets/*"],
+      "@layout/*": ["./shared/layouts/*"],
+      "@atoms/*": ["./shared/components/atoms/*"],
+      "@molecules/*": ["./hared/components/molecules/*"],
+      "@organisms/*": ["./shared/components/organisms/*"],
+      "@animation/*": ["./shared/constants/animation/*"],
+      "@data/*": ["./shared/constants/data/*"],
+      "@metadata/*": ["./shared/constants/metadata/*"],
+      "@style/*": ["./shared/styles/*"],
+      "@store/*": ["./shared/store/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
