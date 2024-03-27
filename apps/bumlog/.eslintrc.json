@@ -1,0 +1,14 @@
+{
+  "extends": ["next", "next/core-web-vitals", "@vanillaforums/eslint-config", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "no-unused-expressions": "off",
+    "@next/next/no-html-link-for-pages": "off",
+    "@typescript-eslint/no-unused-expressions": "error",
+    "turbo/no-undeclared-env-vars": "off",
+    "import/prefer-default-export": "off"
+  }
+}

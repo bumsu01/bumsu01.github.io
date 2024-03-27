@@ -1,0 +1,37 @@
+{
+  "extends": ["@bumsu/tsconfig/nextjs.json"],
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@assets": ["./public/assets/*"],
+      "@layout/*": ["./shared/layouts/*"],
+      "@atoms/*": ["./shared/components/atoms/*"],
+      "@molecules/*": ["./hared/components/molecules/*"],
+      "@organisms/*": ["./shared/components/organisms/*"],
+      "@animation/*": ["./shared/constants/animation/*"],
+      "@data/*": ["./shared/constants/data/*"],
+      "@metadata/*": ["./shared/constants/metadata/*"],
+      "@style/*": ["./shared/styles/*"],
+      "@store/*": ["./shared/store/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
