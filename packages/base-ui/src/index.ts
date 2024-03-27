@@ -1,2 +1,2 @@
-/* eslint-disable import/prefer-default-export */
 export { default as BaseButton } from './base-button';
+export { default as BaseCheckBox } from './base-check-box';
