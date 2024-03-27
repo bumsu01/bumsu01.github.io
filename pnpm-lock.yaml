@@ -38,6 +38,9 @@ importers:
 
   apps/bumlog:
     dependencies:
+      '@bumsu/base-ui':
+        specifier: workspace:*
+        version: link:../../packages/base-ui
       '@emotion/react':
         specifier: ^11.11.3
         version: 11.11.4(@types/react@18.2.69)(react@18.2.0)

@@ -3,6 +3,8 @@ import { useMemo } from 'react';
 
 type CheckboxContextProps = {
   id: string;
+  className?: string;
+  isDisable: boolean;
   isChecked: boolean;
   onChange: () => void;
 };
@@ -11,20 +13,35 @@ type CheckboxProps = CheckboxContextProps & React.PropsWithChildren<object>;
 
 const CheckboxContext = React.createContext<CheckboxContextProps>({
   id: '',
+  className: '',
+  isDisable: false,
   isChecked: false,
   onChange: () => {},
 });
 
-function BaseCheckBox({ id, isChecked, onChange, children = null }: CheckboxProps) {
+function BaseCheckBox({
+  id,
+  className = '',
+  isChecked,
+  isDisable,
+  onChange,
+  children = null,
+}: CheckboxProps) {
   const value = useMemo(
     () => ({
       id,
+      className,
+      isDisable,
       isChecked,
       onChange,
     }),
-    [],
+    [id, isChecked, onChange],
   );
-  return <CheckboxContext.Provider value={value}>{children}</CheckboxContext.Provider>;
+  return (
+    <CheckboxContext.Provider value={value}>
+      <div className={value.className}>{children}</div>
+    </CheckboxContext.Provider>
+  );
 }
 
 const useCheckboxContext = () => {
@@ -33,14 +50,29 @@ const useCheckboxContext = () => {
 };
 
 function Checkbox({ ...props }) {
-  const { id, isChecked, onChange } = useCheckboxContext();
-  return <input type="checkbox" id={id} checked={isChecked} onChange={onChange} {...props} />;
+  const { id, isChecked, isDisable, onChange } = useCheckboxContext();
+
+  return (
+    <input
+      type="checkbox"
+      id={id}
+      disabled={isDisable}
+      checked={isChecked}
+      onChange={onChange}
+      {...props}
+    />
+  );
 }
 
-function Label({ children = null, ...props }: React.PropsWithChildren<object>) {
+interface LabelProps {
+  children?: React.ReactNode;
+  className?: string;
+}
+
+function Label({ children = null, className = '', ...props }: LabelProps) {
   const { id } = useCheckboxContext();
   return (
-    <label htmlFor={id} {...props}>
+    <label htmlFor={id} {...props} className={className}>
       {children}
     </label>
   );

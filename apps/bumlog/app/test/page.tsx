@@ -4,6 +4,8 @@
 
 import React, { useState } from 'react';
 
+import { CheckBox } from '@atoms/check-box';
+
 import {
   boxStyle,
   buttonStyle,
@@ -20,6 +22,24 @@ export default function ContactPage() {
   const onClickSwitchDarkModeButton = () => {
     setIsDarkTheme(!isDarkTheme);
   };
+
+  const checkBoxVar = [
+    {
+      id: '1',
+      title: 'one',
+      selected: false,
+    },
+    {
+      id: '2',
+      title: 'two',
+      selected: false,
+    },
+    {
+      id: '3',
+      title: 'three',
+      selected: false,
+    },
+  ];
 
   return (
     <div>
@@ -40,6 +60,16 @@ export default function ContactPage() {
           </button>
         </div>
       </div>
+      <CheckBox
+        variants={checkBoxVar}
+        color="government"
+        shape="fill"
+        padding="L"
+        align="row"
+        containerSize="L"
+        size="L"
+        fontSize="S"
+      />
     </div>
   );
 }
