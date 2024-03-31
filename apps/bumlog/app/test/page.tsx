@@ -1,10 +1,14 @@
+/* eslint-disable import/extensions */
 /* eslint-disable react/button-has-type */
 
 'use client';
 
 import React, { useState } from 'react';
 
+import BaseTabs from '@bumsu/base-ui/src/base-tabs';
+
 import { CheckBox } from '@atoms/check-box';
+import * as testStyle from '@style/test/style.css';
 
 import {
   boxStyle,
@@ -70,6 +74,26 @@ export default function ContactPage() {
         size="L"
         fontSize="S"
       />
+      <BaseTabs.Tabs defaultValue="3">
+        <BaseTabs.TabList>
+          <BaseTabs.Tab className={testStyle.tabButton} value="1">
+            Tab 1
+          </BaseTabs.Tab>
+          <BaseTabs.Tab className={testStyle.tabButton} value="2">
+            Tab 2
+          </BaseTabs.Tab>
+          <BaseTabs.Tab className={testStyle.tabButton} value="3">
+            Tab 3
+          </BaseTabs.Tab>
+          <BaseTabs.Tab className={testStyle.tabButton} value="4" disabled>
+            Tab Disabled
+          </BaseTabs.Tab>
+        </BaseTabs.TabList>
+        <BaseTabs.TabPanel value="1">Panel 1</BaseTabs.TabPanel>
+        <BaseTabs.TabPanel value="2">Panel 2</BaseTabs.TabPanel>
+        <BaseTabs.TabPanel value="3">Panel 3</BaseTabs.TabPanel>
+        <BaseTabs.TabPanel value="4">Panel 4</BaseTabs.TabPanel>
+      </BaseTabs.Tabs>
     </div>
   );
 }
